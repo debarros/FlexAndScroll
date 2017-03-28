@@ -29,3 +29,14 @@ border: 0px;
 
 scrollPanel = function(...){
   div(class = "well scrollpanel", ...)}
+
+
+
+selectizeInput2 = function (inputId, label, choices){
+  x = selectizeInput(
+    inputId = inputId, 
+    label = label, 
+    choices = choices)
+  x$children[[2]]$children[[1]]$attribs$style = "z-index: 2"
+  return(x)
+}

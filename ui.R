@@ -1,6 +1,5 @@
 library(shiny)
 library(shinyBS)
-source("TabPanelFlex.R")
 source("uielements.R")
 shinyUI(fluidPage(
   tagList(header),
@@ -13,7 +12,13 @@ shinyUI(fluidPage(
           scrollPanel(style = "width:50%;", 
                       h1(tags$ul(tags$li(1),tags$li(1),tags$li(1),tags$li(1),tags$li(1),tags$li(1),tags$li(1),tags$li(1),tags$li(1),tags$li(1)))),
           div(style = "width:50%; background-color:pink; border: 5px solid purple;",
-              h3("Other Stuff"))
+              h3("Other Stuff"),
+              selectizeInput2(
+                inputId = "stuff", 
+                label = "Selectize Input Dropdown Box", 
+                choices = as.list(LETTERS[1:10]))
+              )
       )
   )
 ))
+
